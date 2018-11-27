@@ -1,2 +1,2 @@
 # FeatherLady
-A wwebsite written for a cleaning business
+A website written for a cleaning business
