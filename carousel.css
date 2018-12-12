@@ -8,6 +8,12 @@ body {
   color: #5a5a5a;
 }
 
+/* Jumbotron
+-------------------------------------------------- */
+.jumbotron {
+  font-size: 64em;
+  background-color: #FFFFFF;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
