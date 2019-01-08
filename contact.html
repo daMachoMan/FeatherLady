@@ -99,15 +99,64 @@
               <input type="text" class="form-control" id="inputPostcode" placeholder="Postcode">
             </div>
           </div>
+          <!-- Additional Form Questions -->
           <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
+            <label for="inputSupportedLiving">Is your house Supported Living?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <label class="form-check-label" for="inlineRadio1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <label class="form-check-label" for="inlineRadio2">No</label>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Sign in</button>
+
+          <div class="form-group">
+            <label for="inputPets">Do you have pets?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <label class="form-check-label" for="inlineRadio1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <label class="form-check-label" for="inlineRadio2">No</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputSupportedLiving">Which service do you need?</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Deep Cleaning</option>
+              <option>Spring Cleaning</option>
+              <option>Regular Cleaning</option>
+              <option>End of Tenancy Cleaning</option>
+              <option>Communal Area Cleaning</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputSupportedLiving">How often do you need the service?</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>One Off</option>
+              <option>Weekly</option>
+              <option>Fortnightly</option>
+              <option>Monthly</option>
+              <option>Annually</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="inputSupportedLiving">Would you like to receive notifications about our services?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <label class="form-check-label" for="inlineRadio1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <label class="form-check-label" for="inlineRadio1">No</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
       <!-- FOOTER -->
@@ -158,7 +207,7 @@
               </ul>
             </div>
           </div>
-          <p class="copyright">&copy; 2018 Panashe Katema</p>
+          <p class="copyright">&copy; 2018 FeatherLady</p>
         </div>
       </footer>
     </main>
