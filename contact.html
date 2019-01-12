@@ -37,7 +37,7 @@
             <!-- <a class="nav-item nav-link" href="officeCleaning.html">Office Cleaning</a>
             <a class="nav-item nav-link" href="eventsCleaning.html">Events Cleaning</a> -->
             <a class="nav-item nav-link" href="whychooseus.html">Why choose us?</a>
-            <a class="nav-item nav-link" href="contact.html">Contact<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="contact.html">Contact<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="about.html">About</a>
           </ul>
         </div>
@@ -50,12 +50,12 @@
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4">CONTACT US</h1>
-          <p class="lead"></p>
+          <p class="lead">If you are wanting to acquire our services please fill out the following form.</p>
         </div>
       </div>
       <!-- Contact form -->
       <div class="container">
-        <form>
+        <form action="php\formhandler.php" method="POST">
           <div class="form-row">
             <div class="form-group col-md-2">
               <label for="inputTitle">Title</label>
@@ -65,88 +65,96 @@
                 <option>Mr</option>
                 <option>Mrs</option>
                 <option>Miss</option>
+                <option>Other</option>
               </select>
             </div>
             <div class="form-group col-md-5">
               <label for="inputFirstName">First Name</label>
-              <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+              <input type="text" class="form-control" id="FirstName" placeholder="First Name">
             </div>
             <div class="form-group col-md-5">
               <label for="inputLastName">Last Name</label>
-              <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+              <input type="text" class="form-control" id="LastName" placeholder="Last Name">
             </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="text" class="form-control" id="Email" placeholder="Email Address">
           </div>
 
           <div class="form-group">
             <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 1">
-          </div>
-          <div class="form-group">
+            <input type="text" class="form-control" id="Address1" placeholder="Address Line 1">
             <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Address Line 2">
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" id="inputCity" placeholder="City">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputCounty">County</label>
-              <input type="text" class="form-control" id="inputCounty" placeholder="County">
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputPostcode">Postcode</label>
-              <input type="text" class="form-control" id="inputPostcode" placeholder="Postcode">
+            <input type="text" class="form-control" id="Address2" placeholder="Address Line 2">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="City" placeholder="City">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputCounty">County</label>
+                <input type="text" class="form-control" id="County" placeholder="County">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputPostcode">Postcode</label>
+                <input type="text" class="form-control" id="Postcode" placeholder="Postcode">
+              </div>
             </div>
           </div>
           <!-- Additional Form Questions -->
-          <div class="form-group">
-            <label for="inputSupportedLiving">Is your house Supported Living?</label>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-              <label class="form-check-label" for="inlineRadio1">Yes</label>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputSupportedLiving">Is your house Supported Living?</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Yes">
+                <label class="form-check-label" for="inlineRadio1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="No">
+                <label class="form-check-label" for="inlineRadio2">No</label>
+              </div>
             </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">No</label>
+
+            <div class="form-group col-md-6">
+              <label for="inputPets">Do you have pets?</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">No</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputPreferredService">Which service do you need?</label>
+              <select class="form-control" id="SupportedLiving">
+                <option>Deep Cleaning</option>
+                <option>Spring Cleaning</option>
+                <option>Regular Cleaning</option>
+                <option>End of Tenancy Cleaning</option>
+                <option>Communal Area Cleaning</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputHowOften">How often do you need the service?</label>
+              <select class="form-control" id="HowOftenServiceNeeded">
+                <option>One Off</option>
+                <option>Weekly</option>
+                <option>Fortnightly</option>
+                <option>Monthly</option>
+                <option>Annually</option>
+              </select>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="inputPets">Do you have pets?</label>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-              <label class="form-check-label" for="inlineRadio1">Yes</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">No</label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="inputSupportedLiving">Which service do you need?</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Deep Cleaning</option>
-              <option>Spring Cleaning</option>
-              <option>Regular Cleaning</option>
-              <option>End of Tenancy Cleaning</option>
-              <option>Communal Area Cleaning</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="inputSupportedLiving">How often do you need the service?</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>One Off</option>
-              <option>Weekly</option>
-              <option>Fortnightly</option>
-              <option>Monthly</option>
-              <option>Annually</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="inputSupportedLiving">Would you like to receive notifications about our services?</label>
+            <label for="inputNotifications">Would you like to receive notifications about our services?</label>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
               <label class="form-check-label" for="inlineRadio1">Yes</label>
@@ -157,9 +165,13 @@
             </div>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
+          <p> ** Information provided to us will be kept private and confidential. We will use this information to
+communicate between you and Feather Lady following your enquiry and to provide you with the
+information, products and services that you request from us. **<p>
         </form>
       </div>
       <!-- FOOTER -->
+      <hr class="featurette-divider">
       <footer class="footer">
         <div class="container text-center">
           <div class="row">
@@ -174,7 +186,7 @@
                 <i class="fa fa-map-marker"></i>
                 </h4>
                 <p>29 Burlington House,<br>
-                 369 wellingborough rd,<br>
+                 369 Wellingborough rd,<br>
                   NN1 4EU
                 <br>UK</p>
             </div>
@@ -219,7 +231,6 @@
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
     <script src="../../../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script src="js/contact/form.js"></script>
   </body>
 </html>
