@@ -1,34 +1,40 @@
-<?PHP
-  // form handler
-  if($_POST && isset($_POST['sendfeedback'], $_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message'])) {
+<?php
+// Check for empty fields
+if(empty($_POST['firstName'])      ||
+   empty($_POST['lastName'])     ||
+   empty($_POST['email'])     ||
+   // empty($_POST['phone'])     ||
+   empty($_POST['address'])   ||
+   empty($_POST['postcode'])     ||
+   !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
+   {
+   echo "No arguments Provided!";
+   return false;
+   }
 
-    $FirstName = $_POST['FirstName'];
-    $Lastame = $_POST['LastName'];
-    $email = $_POST['Email'];
-    // address info
-    $Address1 = $_POST['Address1l'];
-    $Address2 = $_POST['Address2]'];
-    $City = $_POST['City'];
-    $County = $_POST['County'];
-    $Postcode = $_POST['Postcode'];
-    // addition form questions
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
 
-    if(!$name) {
-      $errorMsg = "Please enter your Name";
-    } elseif(!$email || !preg_match("/^\S+@\S+$/", $email)) {
-      $errorMsg = "Please enter a valid Email address";
-    } elseif(!$message) {
-      $errorMsg = "Please enter your comment in the Message box";
-    } else {
-      // send email and redirect
-      $to = "pkatema5@gmail.com";
-      if(!$subject) $subject = "Contact from website";
-      $headers = "From: webmaster@example.com" . "\r\n";
-      mail($to, $subject, $message, $headers);
-      header("Location: http://www.example.com/thankyou.html");
-      exit;
-    }
+$title = strip_tags(htmlspecialchars($_POST['title']));
+$firstName = strip_tags(htmlspecialchars($_POST['firstName']));
+$lastName = strip_tags(htmlspecialchars($_POST['lastName']));
+$email_address = strip_tags(htmlspecialchars($_POST['email']));
+$address = strip_tags(htmlspecialchars($_POST['address']));
+$address2 = strip_tags(htmlspecialchars($_POST['address2']));
+$city = strip_tags(htmlspecialchars($_POST['city']));
+$supportedLiving = strip_tags(htmlspecialchars($_POST['supportedLiving']));
+$pets = strip_tags(htmlspecialchars($_POST['pets']));
+$frequency = strip_tags(htmlspecialchars($_POST['frequency']));
+$service = strip_tags(htmlspecialchars($_POST['service']));
+$notifyMe = strip_tags(htmlspecialchars($_POST['notifyMe']));
+// $phone = strip_tags(htmlspecialchars($_POST['phone']));
+// $message = strip_tags(htmlspecialchars($_POST['message']));
 
-  }
+// Create the email and send the message
+$to = 'info@featherlady.co.uk'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+$email_subject = "Website Contact Form:  $firstName";
+$email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $title $firstName $lastName\n\nEmail: $email_address\n\n Address: $address ,\n\n$address2,\n\n $city, \n\n $postcode \n\n Service: $service \n\n Frequency: $frequency \n\n Supported Living?: $supportedLiving\n\n Pets?: $pets ";
+$headers = "From: noreply@FeatherLady.co.uk\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$headers .= "Reply-To: $email_address";
+mail($to,$email_subject,$email_body,$headers);
+header("formsent.html")
+return true;
+?>

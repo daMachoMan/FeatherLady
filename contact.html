@@ -49,125 +49,161 @@
       <!-- Jumbotron -->
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">CONTACT US</h1>
-          <p class="lead">If you are wanting to acquire our services please fill out the following form.</p>
+          <h1 class="display-4">HOUSE CLEANING</h1>
+          <p class="lead">A clean house is a happy home.</p>
+          <p class="lead"> Your home is a reflection of who you are as a person. An organized home with a superior clean from Feather Lady will increase your sense of wellbeing and impress those visiting your home.</p>
+          <p class="lead">Over time your home becomes infiltrated with dust, dirt, excessive mould spores, viruses, and bacteria. A professional house cleaning from Feather Lady reduces the contaminants in your home that can make you and your family unwell.</p>
+          <p class="lead">Our cleaning team will deliver a professional service and an excellent end results.</p>
         </div>
       </div>
       <!-- Contact form -->
       <div class="container">
-        <form action="php\formhandler.php" method="POST">
-          <div class="form-row">
-            <div class="form-group col-md-2">
-              <label for="inputTitle">Title</label>
-              <select id="inputTitle" class="form-control">
-                <option selected>Choose...</option>
-                <option>Dr</option>
-                <option>Mr</option>
-                <option>Mrs</option>
-                <option>Miss</option>
-                <option>Other</option>
+        <h4 class="mb-3">Make an Enquiry</h4>
+        <p class="muted"> * indicates required fields</p>
+        <form class="needs-validation" action="php/formhandler.php" method="post" novalidate>
+          <div class="row">
+            <div class="col-md-2 mb-3">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" name="title" placeholder="Dr" value="" required>
+            </div>
+            <div class="col-md-5 mb-3">
+              <label for="firstName">First name<span class="text-muted">*</span></label>
+              <input type="text" class="form-control" name="firstName" placeholder="Sherlock" value="" required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-md-5 mb-3">
+              <label for="lastName">Last name<span class="text-muted">*</span></label>
+              <input type="text" class="form-control" name="lastName" placeholder="Holmes" value="" required>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email">Email <span class="text-muted">*</span></label>
+            <input type="email" class="form-control" name="email" placeholder="SherlockHolmes@example.com">
+          </div>
+
+          <div class="mb-3">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" name="address" placeholder="221b Baker Street" required>
+            <div class="invalid-feedback">
+              Please enter your address.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+            <input type="text" class="form-control" name="address2" placeholder="Marylebone">
+          </div>
+
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country">Country<span class="text-muted">*</span></label>
+              <select class="custom-select d-block w-100" name="country" required>
+                <option value="">Choose...</option>
+                <option>United Kingdom</option>
               </select>
-            </div>
-            <div class="form-group col-md-5">
-              <label for="inputFirstName">First Name</label>
-              <input type="text" class="form-control" id="FirstName" placeholder="First Name">
-            </div>
-            <div class="form-group col-md-5">
-              <label for="inputLastName">Last Name</label>
-              <input type="text" class="form-control" id="LastName" placeholder="Last Name">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="inputEmail">Email</label>
-            <input type="text" class="form-control" id="Email" placeholder="Email Address">
-          </div>
-
-          <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="Address1" placeholder="Address Line 1">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="Address2" placeholder="Address Line 2">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="City" placeholder="City">
+              <div class="invalid-feedback">
+                Please select a valid country.
               </div>
-              <div class="form-group col-md-4">
-                <label for="inputCounty">County</label>
-                <input type="text" class="form-control" id="County" placeholder="County">
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="city">City</label>
+              <input type="text" class="form-control" name="city" placeholder="London" required>
+              <div class="invalid-feedback">
+                Please provide a valid city.
               </div>
-              <div class="form-group col-md-2">
-                <label for="inputPostcode">Postcode</label>
-                <input type="text" class="form-control" id="Postcode" placeholder="Postcode">
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="postcode">Postcode</label>
+              <input type="text" class="form-control" name="postcode" placeholder="NW1 6XE" required>
+              <div class="invalid-feedback">
+                Please provide a postcode.
               </div>
             </div>
           </div>
+          <hr class="mb-4">
           <!-- Additional Form Questions -->
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputSupportedLiving">Is your house Supported Living?</label>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Yes">
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="No">
-                <label class="form-check-label" for="inlineRadio2">No</label>
+              <label for="supportedLiving">Is your house Supported Living?*</label>
+              <input type="text" class="form-control" name="supportedLiving" placeholder="Yes or No" required>
+              <div class="invalid-feedback">
+                Please answer the question.
               </div>
             </div>
 
             <div class="form-group col-md-6">
-              <label for="inputPets">Do you have pets?</label>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1">Yes</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2">No</label>
+              <label for="inputPets">Do you have pets?*</label>
+              <input type="text" class="form-control" name="pets" placeholder="1 cat, 2 dogs" required>
+              <div class="invalid-feedback">
+                Please answer the question.
               </div>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputPreferredService">Which service do you need?</label>
-              <select class="form-control" id="SupportedLiving">
+              <label for="inputPreferredService">Which service do you need?*</label>
+              <select class="form-control" name="service" required>
                 <option>Deep Cleaning</option>
                 <option>Spring Cleaning</option>
                 <option>Regular Cleaning</option>
                 <option>End of Tenancy Cleaning</option>
                 <option>Communal Area Cleaning</option>
               </select>
+              <div class="invalid-feedback">
+                Please select an option.
+              </div>
             </div>
             <div class="form-group col-md-6">
               <label for="inputHowOften">How often do you need the service?</label>
-              <select class="form-control" id="HowOftenServiceNeeded">
+              <select class="form-control" name="frequency" required>
                 <option>One Off</option>
                 <option>Weekly</option>
                 <option>Fortnightly</option>
                 <option>Monthly</option>
                 <option>Annually</option>
               </select>
+              <div class="invalid-feedback">
+                Please select an option.
+              </div>
             </div>
           </div>
 
+          <hr class="mb-4">
+
           <div class="form-group">
-            <label for="inputNotifications">Would you like to receive notifications about our services?</label>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-              <label class="form-check-label" for="inlineRadio1">Yes</label>
+            <label for="inputNotifications">How many bedrooms? *</label>
+            <input type="text" class="form-control" name="noBed" placeholder="1 Double, 2 Singles" required>
+            <div class="invalid-feedback">
+              Please enter a number.
             </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio1">No</label>
+
+            <label for="inputNotifications">How many bathrooms? *</label>
+            <input type="text" class="form-control" name="noBath" placeholder="1 En-Suite, 1 Family bathroom." required>
+            <div class="invalid-feedback">
+              Please enter the required details.
             </div>
           </div>
+
+          <hr class="mb-4">
+
+          <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="notifyMe">
+              <label class="custom-control-label" for="notifyMe">I would like to see notifications of your services and promotions</label>
+            </div>
+          </div>
+
           <button type="submit" class="btn btn-primary">Submit</button>
           <p> ** Information provided to us will be kept private and confidential. We will use this information to
-communicate between you and Feather Lady following your enquiry and to provide you with the
-information, products and services that you request from us. **<p>
+            communicate between you and Feather Lady following your enquiry and to provide you with the
+            information, products and services that you request from us. **<p>
         </form>
       </div>
       <!-- FOOTER -->
@@ -232,5 +268,27 @@ information, products and services that you request from us. **<p>
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
     <script src="../../../../dist/js/bootstrap.min.js"></script>
     <script src="js/contact/form.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
   </body>
 </html>
