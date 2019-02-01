@@ -57,6 +57,54 @@ body {
   margin-left: .75rem;
 }
 
+/* H2's
+------------------------- */
+.h2 {
+    font-family: "Averta","Averta Bold Italic";
+}
+
+/* Border Thickness
+------------------------- */
+.border-3 {
+    border-width:3px !important;
+}
+
+.border-5 {
+  border-width: 5px !important;
+}
+
+/* Text and Borders
+------------------------- */
+.FeatherL-green {
+    border-color: rgb(94, 186, 75)!important;
+    color: rgb(94, 186, 75)!important;
+}
+
+.FeatherL-pink {
+  border-color: rgb(239, 68, 138) !important;
+  color: rgb(239, 68, 138) !important;
+}
+
+.FeatherL-blue {
+  border-color: rgb(42, 188, 235) !important;
+  color: rgb(42, 188, 235) !important;
+}
+
+/* Buttons!!!
+-------------------------- */
+
+.btn-green {
+  background: rgb(94, 186, 75) !important;
+  border-color: white !important;
+}
+.btn-pink {
+  background: rgb(239, 68, 138) !important;
+  border-color: white !important;
+}
+.btn-blue {
+  background: rgb(42, 188, 235) !important;
+  border-color: white !important;
+}
 
 /* Featurettes
 ------------------------- */
