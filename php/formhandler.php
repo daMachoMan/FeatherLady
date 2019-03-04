@@ -20,21 +20,18 @@ $email_address = strip_tags(htmlspecialchars($_POST['email']));
 $address = strip_tags(htmlspecialchars($_POST['address']));
 $address2 = strip_tags(htmlspecialchars($_POST['address2']));
 $city = strip_tags(htmlspecialchars($_POST['city']));
+$postcode = strip_tags(htmlspecialchars($_POST['postcode']));
 $supportedLiving = strip_tags(htmlspecialchars($_POST['supportedLiving']));
 $pets = strip_tags(htmlspecialchars($_POST['pets']));
 $frequency = strip_tags(htmlspecialchars($_POST['frequency']));
 $service = strip_tags(htmlspecialchars($_POST['service']));
-$notifyMe = strip_tags(htmlspecialchars($_POST['notifyMe']));
-// $phone = strip_tags(htmlspecialchars($_POST['phone']));
-// $message = strip_tags(htmlspecialchars($_POST['message']));
 
-// Create the email and send the message
-$to = 'info@featherlady.co.uk'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-$email_subject = "Website Contact Form:  $firstName";
-$email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $title $firstName $lastName\n\nEmail: $email_address\n\n Address: $address ,\n\n$address2,\n\n $city, \n\n $postcode \n\n Service: $service \n\n Frequency: $frequency \n\n Supported Living?: $supportedLiving\n\n Pets?: $pets ";
-$headers = "From: noreply@FeatherLady.co.uk\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+$to = 'info@FeatherLady.co.uk';
+$email_subject = "New enquiry:  $firstName";
+$email_body = "You have received and enquiry from your website contact form.\n\n Here are the details:\n\n\n Name: $title $firstName $lastName\n\n\n Email: $email_address \n\n\n Address: $address ,\n $address2 ,\n $city ,\n $postcode\n\n\n Is it supported living? $supportedLiving\n\n\n Which service? $service\n\n\n Has Pets? $pets\n\n\n How often? $frequency\n\n\n";
+$headers = "From: noreply@FeatherLady.co.uk\n";
 $headers .= "Reply-To: $email_address";
 mail($to,$email_subject,$email_body,$headers);
-header("formsent.html")
+header("Location: ../formsent.html");
 return true;
 ?>
